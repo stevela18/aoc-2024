@@ -17,20 +17,15 @@ import pandas as pd
 import numpy as np
 
 # %%
-data = pd.read_csv(
-    "./input.txt",
-    sep="   ",
-    header=None,
-    engine="python"
-)
-
-# %%
-data = np.genfromtxt("input.txt", delimiter="   ", dtype=None, encoding="utf-8")
+data = np.genfromtxt("day1input.txt", delimiter="   ", dtype=None, encoding="utf-8")
 
 # %%
 distance = np.abs(np.sort(data[:,0]) - np.sort(data[:,1]))
-
-# %%
+# distance
 sum(distance)
 
 # %%
+left_numbers = np.unique(data[:, 0])
+right_counts = np.array([sum(x==data[:, 1]) for x in left_numbers])
+# similarity
+sum(left_numbers * right_counts)
