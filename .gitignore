@@ -171,7 +171,6 @@ cdk.context*
 *.gz
 *.json
 *.png
-*.txt
 *.jsonl
 *.dat
 *.log
